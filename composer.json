@@ -1,0 +1,25 @@
+{
+    "name": "kevinnaguirre9/doctrine-json-test",
+    "description": "Just testing doctrine JSON type for table columns",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kevinnaguirre9\\DoctrineJsonTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kevin Aguirre"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "doctrine/orm": "^2.13",
+        "doctrine/dbal": "^3.4",
+        "dunglas/doctrine-json-odm": "^1.2",
+        "scienta/doctrine-json-functions": "~4.3",
+        "ramsey/uuid": "5.x-dev",
+        "symfony/cache": "^6.1"
+    }
+}

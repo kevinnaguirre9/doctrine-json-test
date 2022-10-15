@@ -1,0 +1,36 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    container_name: doctrine-json-test
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
+
+  db:
+    image: mysql
+    container_name: doctrine-json-test-mysql
+    command: --default-authentication-plugin=mysql_native_password --innodb-use-native-aio=0
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    tty: true
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret'
+
+  phpmyadmin:
+    container_name: doctrine-json-test-phpmyadmin
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '${FORWARD_PHPMYADMIN_PORT:-8081}:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: 'secret'

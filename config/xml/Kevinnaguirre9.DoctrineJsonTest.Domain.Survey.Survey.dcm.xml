@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Kevinnaguirre9\DoctrineJsonTest\Domain\Survey\Survey" table="surveys" >
+
+        <id name="id" type="survey_id" column="id" length="36" />
+
+        <field name="title" type="string" length="50" />
+
+        <field name="description" type="string" length="100" nullable="true"/>
+
+    </entity>
+
+</doctrine-mapping>
