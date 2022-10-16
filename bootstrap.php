@@ -11,7 +11,7 @@ use Dunglas\DoctrineJsonOdm\Type\JsonDocumentType;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\{ArrayDenormalizer, ObjectNormalizer};
 use Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\{
-    JsonExtract, JsonSearch, JsonContains,
+    JsonExtract, JsonSearch, JsonContains, JsonOverlaps
 };
 
 require_once "vendor/autoload.php";
@@ -46,6 +46,7 @@ if (!Type::hasType('json_document')) {
 $config->addCustomStringFunction(JsonExtract::FUNCTION_NAME, JsonExtract::class);
 $config->addCustomStringFunction(JsonSearch::FUNCTION_NAME, JsonSearch::class);
 $config->addCustomStringFunction(JsonContains::FUNCTION_NAME, JsonContains::class);
+$config->addCustomStringFunction(JsonOverlaps::FUNCTION_NAME, JsonOverlaps::class);
 
 //Create EntityManager
 $entityManager = EntityManager::create($dbParams, $config);

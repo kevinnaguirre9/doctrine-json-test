@@ -4,7 +4,6 @@ namespace Kevinnaguirre9\DoctrineJsonTest\Domain\Report;
 
 use Kevinnaguirre9\DoctrineJsonTest\Domain\Common\DataSource;
 use Kevinnaguirre9\DoctrineJsonTest\Domain\Common\DataSourceId;
-use Kevinnaguirre9\DoctrineJsonTest\Domain\Common\IsSerializable;
 
 /**
  * Class Report
